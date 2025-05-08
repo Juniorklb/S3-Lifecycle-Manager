@@ -34,44 +34,36 @@ This project configures Amazon S3 lifecycle rules to automate **storage cost opt
 4. Leave default settings or customize as needed
 5. Create the bucket
 
----
+#### ⚙️ Option 2: AWS CLI
+    aws s3api create-bucket \
+      --bucket s3-lifecycle-demo-bucket \
+      --region us-east-1 \
+      --create-bucket-configuration LocationConstraint=us-east-1
 
-###  Step 2: Add Lifecycle Rules
-
-1. In your bucket, go to the **Management** tab
-2. Click **Create lifecycle rule**
-3. Name the rule (e.g., `TransitionAndExpire`)
-4. Scope: apply to all objects or use a prefix like `logs/`
-5. Configure actions:
-   - **Transition to Infrequent Access** after 30 days
-   - **Transition to Glacier** after 60 days
-   - **Expire/delete objects** after 90 days
-6. Save rule
 
 ---
 
-### 🧪 Optional Automation with Boto3 (Python)
+###  Step 2: Add Lifecycle Rules (Manually)
+#### 1. Go to Your S3 Bucket
+-  Open the AWS [S3 Console](https://s3.console.aws.amazon.com/s3/)
+-  Click on your bucket ``s3-lifecycle-demo-bucket``
+#### 2. Navigate to the “Management” Tab
+- In the bucket dashboard, click on “Management”
+- Find the section titled Lifecycle rules
+- Click “Create lifecycle rule.”
+####  Create the Rule
+- Rule Name: ``TransitionAndExpireRule``
+- Choose Scope:
+- Apply to all objects (or add a prefix if needed like ``logs/``)
 
-```python
-import boto3
+#### Set Lifecycle Actions
+-  Transition actions:
+-  Transition to Infrequent Access (IA) after 30 days
+-  Transition to Glacier Flexible Retrieval after 60 days
+-  Expiration actions:
+-  Delete objects after 90 days
+     - Leave other options as default.
+- Save
+---
 
-s3 = boto3.client('s3')
-
-response = s3.put_bucket_lifecycle_configuration(
-    Bucket='my-lifecycle-demo-bucket',
-    LifecycleConfiguration={
-        'Rules': [
-            {
-                'ID': 'MoveToGlacierAndExpire',
-                'Filter': {'Prefix': ''},
-                'Status': 'Enabled',
-                'Transitions': [
-                    {'Days': 30, 'StorageClass': 'STANDARD_IA'},
-                    {'Days': 60, 'StorageClass': 'GLACIER'},
-                ],
-                'Expiration': {'Days': 90},
-                'NoncurrentVersionExpiration': {'NoncurrentDays': 30}
-            }
-        ]
-    }
-)
+### Lifecycle diagram
