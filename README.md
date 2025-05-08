@@ -4,7 +4,7 @@ This project configures Amazon S3 lifecycle rules to automate **storage cost opt
 
 ---
 
-## 📦 Project Goals
+## Project Goal
 
 -  Reduce S3 storage costs with lifecycle transitions
 -  Automatically delete unnecessary or old files
