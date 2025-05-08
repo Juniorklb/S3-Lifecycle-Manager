@@ -1,4 +1,5 @@
-# AWS S3 Lifecycle Manager ![AWS](https://img.shields.io/badge/Built%20with-AWS-orange?style=flat&logo=amazonaws)![Project Status](https://img.shields.io/badge/status-finished-green)
+# AWS S3 Lifecycle Manager !
+![AWS](https://img.shields.io/badge/Built%20with-AWS-orange?style=flat&logo=amazonaws)![Project Status](https://img.shields.io/badge/status-finished-green)
 
 This project configures Amazon S3 lifecycle rules to automate **storage cost optimization**. It transitions objects between storage classes (Standard ➜ Infrequent Access ➜ Glacier), and deletes outdated data based on rules you define.
 
