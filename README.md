@@ -64,6 +64,14 @@ This project configures Amazon S3 lifecycle rules to automate **storage cost opt
 -  Delete objects after 90 days
      - Leave other options as default.
 - Save
+- Click Create rule at the bottom.
 ---
 
-### Lifecycle diagram
+### Conclusion
+The AWS S3 Lifecycle Manager project demonstrates how to efficiently manage and automate the lifecycle of S3 objects to reduce storage costs and maintain compliance. By leveraging lifecycle policies, we can:
+
+- Seamlessly transition data to cheaper storage classes
+
+- Automatically delete outdated objects
+
+- Optimize storage without manual intervention
