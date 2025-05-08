@@ -31,8 +31,9 @@ This project configures Amazon S3 lifecycle rules to automate **storage cost opt
 1. Go to the [S3 Console](https://s3.console.aws.amazon.com/s3/)
 2. Click **Create Bucket**
 3. Name your bucket (e.g., `my-lifecycle-demo-bucket`)
-4. Leave default settings or customize as needed
-5. Create the bucket
+   ![image alt](https://github.com/Juniorklb/S3-Lifecycle-Manager/blob/f1d788445f90976cb798cfb5918a8cf7cc5e1073/images/Bucketname.PNG)
+5. Leave default settings or customize as needed
+6. Create the bucket
 
 #### ⚙️ Option 2: AWS CLI
     aws s3api create-bucket \
