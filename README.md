@@ -40,8 +40,6 @@ This project configures Amazon S3 lifecycle rules to automate **storage cost opt
       --bucket s3-lifecycle-demo-bucket \
       --region us-east-1 \
       --create-bucket-configuration LocationConstraint=us-east-1
-
-
 ---
 
 ###  Step 2: Add Lifecycle Rules (Manually)
@@ -61,6 +59,7 @@ This project configures Amazon S3 lifecycle rules to automate **storage cost opt
 -  Transition actions:
 -  Transition to Infrequent Access (IA) after 30 days
 -  Transition to Glacier Flexible Retrieval after 60 days
+  ![image alt](https://github.com/Juniorklb/S3-Lifecycle-Manager/blob/385a79a4bbafafdd00ae0483b30f36bbfc84de69/images/transactioncurrent.PNG)
 -  Expiration actions:
 -  Delete objects after 90 days
      - Leave other options as default.
